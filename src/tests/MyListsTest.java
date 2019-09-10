@@ -1,3 +1,4 @@
+
 package tests;
 
 import lib.CoreTestCase;
@@ -68,4 +69,6 @@ public class MyListsTest extends CoreTestCase {
                 title_after_adding_article_to_reading_list
         );
     }
+
 }
+

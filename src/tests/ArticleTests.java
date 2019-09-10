@@ -46,4 +46,5 @@ public class ArticleTests extends CoreTestCase {
         ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
         ArticlePageObject.waitForTitleElement();
     }
+
 }

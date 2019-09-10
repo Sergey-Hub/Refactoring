@@ -1,8 +1,10 @@
+
 package tests;
 
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
+
 public class SearchTest extends CoreTestCase {
 
     @Test
@@ -11,6 +13,17 @@ public class SearchTest extends CoreTestCase {
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
         SearchPageObject.waitForSearchResult("Object-oriented programming language");
+    }
+
+    @Test
+    public void testSearchByTitleAndDescriptionFirstThreeOccurances() {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        String search_line = "Java";
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine(search_line);
+        SearchPageObject.waitForElementByTitleAndDescription(search_line, "Island of Indonesia");
+        SearchPageObject.waitForElementByTitleAndDescription(search_line, "Object-oriented programming language");
+        SearchPageObject.waitForElementByTitleAndDescription(search_line, "Programming language");
     }
 
     @Test
@@ -67,4 +80,5 @@ public class SearchTest extends CoreTestCase {
         SearchPageObject.waitForListItemTitleToAppear();
         SearchPageObject.checkIfAllItemTitlesHaveSpecifiedWord(word);
     }
+
 }
